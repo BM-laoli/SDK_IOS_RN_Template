@@ -2,11 +2,22 @@
 #import "CalendarManager.h"
 #import <React/RCTConvert.h>
 
+static NSString * const kTestNotificationName = @"kTestNotificationName";
+static NSString * const TestEventName = @"TestEventName";
+
 //由于实现了这个类 哈，所以
 @implementation CalendarManager
 {
     bool hasListeners;
 //    类似 私有变量
+}
+
+// oc类初始化方法
+- (instancetype)init {
+    if( self = [super init] ){
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sendEventToJS) userInfo:nil repeats:YES];
+    }
+    return  self;
 }
 
 // To export a module named CalendarManager
@@ -22,7 +33,6 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
 {
   NSString *location = [RCTConvert NSString:details[@"location"]];
   NSDate *time = [RCTConvert NSDate:details[@"time"]];
-  
 //
     
 }
@@ -83,5 +93,9 @@ RCT_EXPORT_METHOD(doSomethingExpensive:(NSString *)param callback:(RCTResponseSe
   }
 }
 
+//这样发消息也是可以的
+- (void)sendEventToJS {
+    [self sendEventWithName:@"EventReminder" body:@{@"name": @"2333"}];
+}
 
 @end

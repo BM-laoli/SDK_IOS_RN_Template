@@ -11,7 +11,7 @@ RCT_REMAP_METHOD(multiply,
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSNumber *result = @([a floatValue] * [b floatValue]);
+  NSNumber *result = @([a floatValue] - [b floatValue]);
 
   resolve(result);
 }

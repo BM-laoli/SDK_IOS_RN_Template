@@ -1,27 +1,9 @@
-# react-native-awesome-module
+# 项目说明
 
-this is native module express
+> 本项目旨在开发和构建一个ReactNative IOS Native模块，并用做教程（全文都是按照官方文档来整 有问题请提issues）
 
-## Installation
+# 使用说明
 
-```sh
-npm install react-native-awesome-module
-```
+# 源码细节
 
-## Usage
-
-```js
-import { multiply } from "react-native-awesome-module";
-
-// ...
-
-const result = await multiply(3, 7);
-```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
+## 开发
